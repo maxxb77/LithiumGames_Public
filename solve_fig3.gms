@@ -66,8 +66,7 @@ rep4("stackelberg",i,r,ii_add,jj_add,"revenue")$v_qm(i,r) = rep4("stackelberg",i
 rep4("stackelberg",j,s,ii_add,jj_add,"revenue")$v_qn(j,s) = rep4("stackelberg",j,s,ii_add,jj_add,"price")*qn.l(j,s) ; 
 
 rep4("stackelberg",j,s,ii_add,jj_add,"ore purchase")$v_qn(j,s) = sum((i,r), theta(i,j) * rep4("stackelberg",i,r,ii_add,jj_add,"price")*[QS.l(i,j,r,s) ]) 
-                                                                    + (sum(i,theta(i,j)) * qn.l(j,s)/ (sum((ss),qn.l(j,ss))+qbar_j_add(j)) * sum((i,r), rep4("stackelberg",i,r,ii_add,jj_add,"price")* qbar_i_add(i) / sum((rr,ii)$V_QS(ii,j,rr,s),1))) 
-)  ;
+                                                                + (sum(i,theta(i,j)) * qn.l(j,s)/ (sum((ss),qn.l(j,ss))+qbar_j_add(j)) * sum((i,r), rep4("stackelberg",i,r,ii_add,jj_add,"price")* qbar_i_add(i) / sum((rr,ii)$V_QS(ii,j,rr,s),1)))  ;
 
 rep4("stackelberg",j,s,ii_add,jj_add,"ore purchase")$[v_qn(j,s)] = - sum((i)$theta(i,j), rep4("stackelberg",i,"china",ii_add,jj_add,"price") * qn.l(j,s)) ; 
 
